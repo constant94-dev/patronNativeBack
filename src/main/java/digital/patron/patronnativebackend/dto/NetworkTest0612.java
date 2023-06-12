@@ -3,13 +3,10 @@ package digital.patron.patronnativebackend.dto;
 import lombok.Getter;
 
 @Getter
-public class SampleTestDto {
+public class NetworkTest0612 {
+    private String title;
 
-    String title;
-
-    public SampleTestDto(
-            String title
-    ) {
+    public NetworkTest0612(String title) {
         this.title = title;
     }
 
