@@ -1,4 +1,4 @@
-package digital.patron.patronnativebackend.dto;
+package digital.patron.patronnativebackend.networktest;
 
 import lombok.Getter;
 

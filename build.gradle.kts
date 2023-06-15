@@ -19,9 +19,17 @@ repositories {
 }
 
 dependencies {
+    // spring web
     implementation("org.springframework.boot:spring-boot-starter-web")
+    // spring data jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    // MySQL 데이터베이스 드라이버 의존성 추가
+    implementation("com.mysql:mysql-connector-j")
+
+    // lombok
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+    // test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

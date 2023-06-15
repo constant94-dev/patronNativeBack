@@ -1,5 +1,6 @@
 package digital.patron.patronnativebackend;
 
+import digital.patron.patronnativebackend.artwork.domain.ArtworkGroup;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
