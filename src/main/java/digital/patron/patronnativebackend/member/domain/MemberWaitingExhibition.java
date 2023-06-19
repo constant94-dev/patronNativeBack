@@ -16,9 +16,11 @@ public class MemberWaitingExhibition {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exhibition_id")
     private Exhibition exhibition;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "general_member_id")
     private GeneralMember generalMember;
 
     public void setExhibition(Exhibition exhibition){

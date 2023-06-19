@@ -1,9 +1,7 @@
 package digital.patron.patronnativebackend.member.domain;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
@@ -14,6 +12,8 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter(AccessLevel.PRIVATE)
+@AllArgsConstructor
+@NoArgsConstructor
 public class GeneralMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,7 +78,6 @@ public class GeneralMember {
     private Set<MemberWaitingExhibition> memberWaitingExhibitions = new HashSet<>();
     @OneToMany(mappedBy = "generalMember")
     private Set<SearchHistory> searchHistories = new HashSet<>();
-
 
     public GeneralMember(String email, String name, String status,
                          String public_wallet, LocalDate birth, String nationality,

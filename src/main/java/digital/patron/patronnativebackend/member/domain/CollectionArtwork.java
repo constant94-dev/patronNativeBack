@@ -6,13 +6,11 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Entity
 @Getter
 @Setter(AccessLevel.PRIVATE)
-@Table(name = "kt_member_views_artwork_relation")
-public class MemberSeenArtwork {
+@Table(name = "collection_artwork_relation")
+public class CollectionArtwork {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,16 +20,10 @@ public class MemberSeenArtwork {
     private Artwork artwork;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "general_member_id")
-    private GeneralMember generalMember;
-
-    private LocalDate viewLastTime;
-
-    public MemberSeenArtwork(LocalDate viewLastTime){this.viewLastTime = viewLastTime;}
+    @JoinColumn(name = "collection_id")
+    private Collection collection;
 
     public void setArtwork(Artwork artwork){this.artwork = artwork;}
+    public void setCollection(Collection collection){this.collection = collection;}
 
-    public void setGeneralMember(GeneralMember generalMember){this.generalMember = generalMember;}
-
-    protected MemberSeenArtwork(){}
 }

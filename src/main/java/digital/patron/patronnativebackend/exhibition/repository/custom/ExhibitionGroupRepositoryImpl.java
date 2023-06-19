@@ -12,8 +12,8 @@ public class ExhibitionGroupRepositoryImpl implements ExhibitionGroupRepositoryC
 
     private final JPAQueryFactory jpaQueryFactory;
 
-    public ExhibitionGroupRepositoryImpl(JPAQueryFactory jpaQueryFactoryConfig){
-        this.jpaQueryFactory = jpaQueryFactoryConfig;
+    public ExhibitionGroupRepositoryImpl(JpaQueryFactoryConfig jpaQueryFactoryConfig){
+        this.jpaQueryFactory = jpaQueryFactoryConfig.JpaQueryFactoryConfig();
     }
 
     @Override
