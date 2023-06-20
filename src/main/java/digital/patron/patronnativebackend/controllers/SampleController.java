@@ -15,4 +15,9 @@ public class SampleController {
 
         return networkTest;
     }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello!";
+    }
 }

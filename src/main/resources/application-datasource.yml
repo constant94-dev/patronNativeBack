@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # MySQL 8.x 버전 이상에서 사용되는 드라이버
+    url: jdbc:mysql://20.249.79.13:3306/patron_dev?characterEncoding=UTF-8
+    username: patrondev
+    password: patrondev201703!
