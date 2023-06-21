@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 @Transactional
 class PatronNativeBackendApplicationTests {
 
-    @PersistenceContext
+    @Autowired
     EntityManager entityManager; // 스프링데이터 jpa에서 자동 빈 주입 , @Autowired 사용시 빈등록 코드를 별도로 직접 작성하여 주입해야한다.
 
     @Test

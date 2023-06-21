@@ -20,9 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 class ExhibitionGroupRepositoryImplTest {
 
-    @PersistenceContext
-    EntityManager entityManager;
-
     @Autowired
     ExhibitionGroupRepositoryImpl exhibitionGroupRepository;
 
@@ -30,7 +27,5 @@ class ExhibitionGroupRepositoryImplTest {
     public void basicTest() {
         List<Exhibition> result = exhibitionGroupRepository.findExhibitionsByExhibitionGroupNameAndLocalization("메인전시", "kr");
         assertThat(result).isNotNull();
-
-
     }
 }

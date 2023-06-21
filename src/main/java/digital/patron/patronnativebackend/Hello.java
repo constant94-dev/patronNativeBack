@@ -1,5 +1,6 @@
 package digital.patron.patronnativebackend;
 
+import com.querydsl.core.types.EntityPath;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
