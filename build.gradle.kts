@@ -50,7 +50,7 @@ dependencies {
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
 }
 
-val generatedQuerydsl = "$buildDir/generated/querydsl"
+val generatedQuerydsl = "src/main/generated"
 
 querydsl {
     jpa = true

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ExhibitionService {
     List<Exhibition> findExhibitionsByGroupName(String groupName, String localization, String language);
+    Exhibition findExhibitionByGroupName(String groupName, String localization, String language);
 }

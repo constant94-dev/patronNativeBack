@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
 @Slf4j
+@Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ExhibitionServiceImpl implements ExhibitionService {
@@ -25,6 +25,12 @@ public class ExhibitionServiceImpl implements ExhibitionService {
             exhibitionListFilterByLocalization(exhibitionList, localization);
         }
         return exhibitionList;
+    }
+
+    @Override
+    public Exhibition findExhibitionByGroupName(String groupName, String localization, String language) {
+        return findExhibitionsByGroupName(groupName, localization, language).stream()
+                .findFirst().orElse(null);
     }
 
     private void exhibitionListFilterByLocalization(List<Exhibition> exhibitionList, String localization) {

@@ -1,8 +1,11 @@
 package digital.patron.patronnativebackend.artist.domain;
 
 import digital.patron.patronnativebackend.artwork.domain.Artwork;
+import digital.patron.patronnativebackend.integrate.domain.ArtistExhibition;
+import digital.patron.patronnativebackend.member.domain.MemberLikedArtist;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +16,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter(AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,15 +59,20 @@ public class Artist {
     @OrderBy("id asc")
     private Set<Artwork> artworks = new HashSet<>();
 
-    /*private Set<ArtistExhibition> artistExhibitions = new HashSet<>();
+    @OneToMany(mappedBy = "artist")
+    private Set<ArtistExhibition> artistExhibitions = new HashSet<>();
 
+    @OneToMany(mappedBy = "artist")
     private Set<ArtistArtistGroup> artistArtistGroups = new HashSet<>();
 
+    @OneToMany(mappedBy = "artist")
     private Set<ArtistArtistTag> artistArtistTags = new HashSet<>();
 
+    @OneToMany(mappedBy = "artist")
     private Set<MemberLikedArtist> memberLikedArtists = new HashSet<>();
 
-    private Set<ArtistDetail> artistDetails = new HashSet<>();*/
+    @OneToMany(mappedBy = "artist")
+    private Set<ArtistDetail> artistDetails = new HashSet<>();
 
     public Artist(
             String code, String localization, String profileImg, String resume,

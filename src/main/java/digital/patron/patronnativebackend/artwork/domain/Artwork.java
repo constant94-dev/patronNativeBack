@@ -38,7 +38,7 @@ public class Artwork {
     private Boolean nft_regist;
 
     @Column(nullable = false, columnDefinition = "TINYINT DEFAULT 0", length = 1)
-    private String approve;
+    private Boolean approve;
 
     @Column(nullable = false, columnDefinition = "TINYINT DEFAULT 0", length = 1)
     private Boolean charge_free;

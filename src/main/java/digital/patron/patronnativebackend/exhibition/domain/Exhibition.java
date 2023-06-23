@@ -5,6 +5,7 @@ import digital.patron.patronnativebackend.integrate.domain.ArtworkExhibition;
 import digital.patron.patronnativebackend.member.domain.MemberWaitingExhibition;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter(AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class Exhibition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

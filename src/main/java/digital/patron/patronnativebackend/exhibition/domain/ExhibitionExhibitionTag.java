@@ -2,6 +2,7 @@ package digital.patron.patronnativebackend.exhibition.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,4 +24,6 @@ public class ExhibitionExhibitionTag {
     public void setExhibition(Exhibition exhibition){
         this.exhibition = exhibition;
     }
+
+    protected ExhibitionExhibitionTag(){}
 }
