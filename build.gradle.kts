@@ -40,7 +40,7 @@ dependencies {
     // MySQL 데이터베이스 드라이버 의존성 추가
     implementation("com.mysql:mysql-connector-j")
     // p6spy 쿼리 파라미터 로그 남기기
-    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${p6spyVersion}")
+    //implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${p6spyVersion}")
 
     // querydsl-jpa는 JPA(Java Persistence API)와의 통합을 제공
     implementation("com.querydsl:querydsl-jpa:${queryDslVersion}:jakarta")
@@ -51,9 +51,11 @@ dependencies {
 }
 
 val generatedQuerydsl = "src/main/generated"
+val excludedQuerydsl = "$buildDir/generated/querydsl"
 
 querydsl {
     jpa = true
+    querydslDefault = true
     querydslSourcesDir = generatedQuerydsl
 }
 
@@ -72,6 +74,9 @@ tasks {
     }
     compileQuerydsl {
         options.annotationProcessorPath = configurations.querydsl.get()
+    }
+    withType<JavaCompile> {
+        options.annotationProcessorGeneratedSourcesDirectory = file(excludedQuerydsl)
     }
     named<Delete>("clean") {
         dependsOn("cleanGeneratedFiles")

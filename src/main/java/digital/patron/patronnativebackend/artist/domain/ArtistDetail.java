@@ -41,5 +41,10 @@ public class ArtistDetail {
         this.gender = gender;
     }
 
-    protected ArtistDetail(){}
+    public static ArtistDetail createDefault() {
+        return new ArtistDetail();
+    }
+
+    protected ArtistDetail() {
+    }
 }

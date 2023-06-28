@@ -1,6 +1,9 @@
 package digital.patron.patronnativebackend.artwork.domain;
 
 import digital.patron.patronnativebackend.artist.domain.Artist;
+import digital.patron.patronnativebackend.integrate.domain.ArtworkExhibition;
+import digital.patron.patronnativebackend.member.domain.MemberLikedArtwork;
+import digital.patron.patronnativebackend.member.domain.MemberSeenArtwork;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -8,6 +11,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -75,6 +80,21 @@ public class Artwork {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private ContentsThumbnail contentsThumbnail;
+
+    @OneToMany(mappedBy = "artwork")
+    private Set<ArtworkDetail> artworkDetails = new HashSet<>();
+
+    @OneToMany(mappedBy = "artwork")
+    private Set<MemberLikedArtwork> memberLikedArtworks = new HashSet<>();
+
+    @OneToMany(mappedBy = "artwork")
+    private Set<MemberSeenArtwork> memberSeenArtworks = new HashSet<>();
+
+    @OneToMany(mappedBy = "artwork")
+    private Set<ArtworkExhibition> artworkExhibitions = new HashSet<>();
+
+    @OneToMany(mappedBy = "artwork")
+    private Set<ArtworkArtworkTag> artworkArtworkTags = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Artist artist;

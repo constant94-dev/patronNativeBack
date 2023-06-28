@@ -28,15 +28,20 @@ public class ExhibitionDetail {
     @JoinColumn(name = "exhibition_id")
     private Exhibition exhibition;
 
-    public void setExhibition(Exhibition exhibition){
+    public void setExhibition(Exhibition exhibition) {
         this.exhibition = exhibition;
     }
 
-    public ExhibitionDetail(String language, String name, String intro){
+    public ExhibitionDetail(String language, String name, String intro) {
         this.language = language;
         this.name = name;
         this.intro = intro;
     }
 
-    protected ExhibitionDetail(){}
+    public static ExhibitionDetail createDefault() {
+        return new ExhibitionDetail();
+    }
+
+    protected ExhibitionDetail() {
+    }
 }

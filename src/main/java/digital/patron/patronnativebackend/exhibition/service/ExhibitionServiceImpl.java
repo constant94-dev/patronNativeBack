@@ -20,7 +20,6 @@ public class ExhibitionServiceImpl implements ExhibitionService {
     @Override
     public List<Exhibition> findExhibitionsByGroupName(String groupName, String localization, String language) {
         List<Exhibition> exhibitionList = exhibitionGroupRepository.findExhibitionsByExhibitionGroupNameAndLocalization(groupName, localization);
-        System.out.println(exhibitionList.stream().map(e->e.getId()).collect(Collectors.toList()));
         if (!groupName.equals("전시그룹")) {
             exhibitionListFilterByLocalization(exhibitionList, localization);
         }
