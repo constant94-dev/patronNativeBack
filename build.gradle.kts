@@ -41,6 +41,9 @@ dependencies {
     implementation("com.mysql:mysql-connector-j")
     // p6spy 쿼리 파라미터 로그 남기기
     //implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:${p6spyVersion}")
+    // Set up Spring Security
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("org.springframework.security:spring-security-test")
 
     // querydsl-jpa는 JPA(Java Persistence API)와의 통합을 제공
     implementation("com.querydsl:querydsl-jpa:${queryDslVersion}:jakarta")
